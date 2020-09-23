@@ -1,2 +1,2 @@
-export * from './UI/Text/Text';
-export * from './UI/Button/Button';
+export * from './UI';
+export * from './InputFields/SimpleTextInput/SimpleTextInput';

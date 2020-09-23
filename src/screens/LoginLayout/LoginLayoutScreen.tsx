@@ -1,22 +1,33 @@
-import { View, StyleSheet } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import React from 'react';
 
-import { Text } from '@components';
+import { Text, SimpleTextInput, KeyboardAvoidingView } from '@components';
 import { RootStackScreenProps, ROUTES } from '@navigation';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+import styles from './styles';
 
 type LoginLayoutProps = RootStackScreenProps<ROUTES.LoginLayout> & {};
 
 const LoginLayout = ({}: LoginLayoutProps) => {
   return (
-    <View style={styles.container}>
-      <Text>Login layout screen</Text>
-    </View>
+    <KeyboardAvoidingView style={styles.flex}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.content}
+      >
+        <View style={styles.inputsWrapper}>
+          <View style={styles.inputsContainer}>
+            <Text style={styles.title}>Login</Text>
+            <SimpleTextInput
+              placeholder="email"
+              label="Email"
+              style={styles.input}
+            />
+            <SimpleTextInput placeholder="password" label="Password" />
+          </View>
+        </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 
