@@ -23,6 +23,7 @@ export default StyleSheet.create({
   },
 
   footer: {
+    backgroundColor: '#ffb7b2',
     height: 100,
     justifyContent: 'center',
   },

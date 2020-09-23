@@ -1,4 +1,4 @@
-import { View, Image, Dimensions } from 'react-native';
+import { View, Image, Dimensions, Platform } from 'react-native';
 import React from 'react';
 import { useHeaderHeight } from '@react-navigation/stack';
 
@@ -21,18 +21,30 @@ const LoginLayout = ({}: LoginLayoutProps) => {
   const { keyboardVisible, keyboardHeight } = useKeyboard();
   const headerHeight = useHeaderHeight();
 
-  const paddingBottom = keyboardVisible ? keyboardHeight : 0;
-  const marginBottom = keyboardVisible ? 50 : 0;
+  let paddingBottom;
+  let imageHeightSpace;
+  if (keyboardVisible) {
+    paddingBottom = Platform.OS === 'ios' ? keyboardHeight + 50 : 50;
+    imageHeightSpace = height - headerHeight - keyboardHeight;
+  } else {
+    paddingBottom = 50;
+    imageHeightSpace = height - headerHeight;
+  }
   const imageSize = keyboardVisible ? 100 : 300;
-  const imageHeightSpace =
-    height - headerHeight - keyboardHeight - marginBottom;
 
   return (
     <KeyboardDismissView style={styles.flex}>
       <KeyboardAvoidingView style={styles.flex} enabled={false}>
-        <View style={[styles.container, { paddingBottom, marginBottom }]}>
+        <View
+          style={[
+            styles.container,
+            {
+              paddingBottom,
+            },
+          ]}
+        >
           <View style={styles.topView}>
-            {imageHeightSpace >= 300 && (
+            {imageHeightSpace >= 350 && (
               <Image
                 source={require('../../assets/logo.png')}
                 style={{
