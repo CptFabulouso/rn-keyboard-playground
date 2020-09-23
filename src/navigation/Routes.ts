@@ -3,4 +3,5 @@ export enum ROUTES {
   LoginLayout = 'LoginLayout',
   FormLayout = 'FormLayout',
   InputAfterScroll = 'InputAfterScroll',
+  Relayout = 'Relayout',
 }

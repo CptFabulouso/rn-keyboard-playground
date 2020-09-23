@@ -8,6 +8,7 @@ import HomeScreen from '@screens/Home/HomeScreen';
 import LoginLayoutScreen from '@screens/LoginLayout/LoginLayoutScreen';
 import FormLayoutScreen from '@screens/FormLayout/FormLayoutScreen';
 import InputAfterScrollScreen from '@screens/InputAfterScroll/InputAfterScrollScreen';
+import RelayoutScreen from '@screens/Relayout/RelayoutScreen';
 
 import { ROUTES } from '../Routes';
 
@@ -16,6 +17,7 @@ export type RootStackParamList = {
   [ROUTES.LoginLayout]: undefined;
   [ROUTES.FormLayout]: undefined;
   [ROUTES.InputAfterScroll]: undefined;
+  [ROUTES.Relayout]: undefined;
 };
 
 export type RootStackScreenProps<
@@ -45,7 +47,12 @@ const RootNavigator = () => {
       <Stack.Screen
         name={ROUTES.InputAfterScroll}
         component={InputAfterScrollScreen}
-        options={{ title: 'Form Layout' }}
+        options={{ title: 'Input after scroll' }}
+      />
+      <Stack.Screen
+        name={ROUTES.Relayout}
+        component={RelayoutScreen}
+        options={{ title: 'Relayout' }}
       />
     </Stack.Navigator>
   );

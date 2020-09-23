@@ -35,6 +35,13 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           }}
           style={styles.button}
         />
+        <Button
+          label="Relayout"
+          onPress={() => {
+            navigation.push(ROUTES.Relayout);
+          }}
+          style={styles.button}
+        />
       </ScrollView>
     </SafeAreaView>
   );
