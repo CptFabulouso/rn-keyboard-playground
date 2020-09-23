@@ -6,12 +6,14 @@ import {
 
 import HomeScreen from '@screens/Home/HomeScreen';
 import LoginLayoutScreen from '@screens/LoginLayout/LoginLayoutScreen';
+import FormLayoutScreen from '@screens/FormLayout/FormLayoutScreen';
 
 import { ROUTES } from '../Routes';
 
 export type RootStackParamList = {
   [ROUTES.Home]: undefined;
   [ROUTES.LoginLayout]: undefined;
+  [ROUTES.FormLayout]: undefined;
 };
 
 export type RootStackScreenProps<
@@ -32,6 +34,11 @@ const RootNavigator = () => {
         name={ROUTES.LoginLayout}
         component={LoginLayoutScreen}
         options={{ title: 'Login Layout' }}
+      />
+      <Stack.Screen
+        name={ROUTES.FormLayout}
+        component={FormLayoutScreen}
+        options={{ title: 'Form Layout' }}
       />
     </Stack.Navigator>
   );

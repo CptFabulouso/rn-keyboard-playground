@@ -6,7 +6,9 @@ import {
 import React, { ReactNode } from 'react';
 import { useHeaderHeight } from '@react-navigation/stack';
 
-type Props = KeyboardAvoidingViewProps & { children: ReactNode };
+type Props = KeyboardAvoidingViewProps & {
+  children: ReactNode;
+};
 
 const KeyboardAvoidingView = ({
   children,

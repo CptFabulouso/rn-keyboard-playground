@@ -21,6 +21,13 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           }}
           style={styles.button}
         />
+        <Button
+          label="Form layout"
+          onPress={() => {
+            navigation.push(ROUTES.FormLayout);
+          }}
+          style={styles.button}
+        />
       </ScrollView>
     </SafeAreaView>
   );
