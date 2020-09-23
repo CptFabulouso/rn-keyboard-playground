@@ -28,6 +28,13 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           }}
           style={styles.button}
         />
+        <Button
+          label="Input after scroll"
+          onPress={() => {
+            navigation.push(ROUTES.InputAfterScroll);
+          }}
+          style={styles.button}
+        />
       </ScrollView>
     </SafeAreaView>
   );
