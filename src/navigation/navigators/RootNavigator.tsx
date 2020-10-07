@@ -9,6 +9,9 @@ import LoginLayoutScreen from '@screens/LoginLayout/LoginLayoutScreen';
 import FormLayoutScreen from '@screens/FormLayout/FormLayoutScreen';
 import InputAfterScrollScreen from '@screens/InputAfterScroll/InputAfterScrollScreen';
 import RelayoutScreen from '@screens/Relayout/RelayoutScreen';
+import KeyboardWithinModalScreen from '@screens/Modal/KeyboardWithinModalScreen';
+import KeyboardWrappingModalScreen from '@screens/Modal/KeyboardWrappingModalScreen';
+import KeyboardWrappingModalLibScreen from '@screens/Modal/RNModal';
 
 import { ROUTES } from '../Routes';
 
@@ -18,6 +21,9 @@ export type RootStackParamList = {
   [ROUTES.FormLayout]: undefined;
   [ROUTES.InputAfterScroll]: undefined;
   [ROUTES.Relayout]: undefined;
+  [ROUTES.KeyboardWithinModal]: undefined;
+  [ROUTES.KeyboardWrappingModal]: undefined;
+  [ROUTES.KeyboardWithinModalLib]: undefined;
 };
 
 export type RootStackScreenProps<
@@ -53,6 +59,21 @@ const RootNavigator = () => {
         name={ROUTES.Relayout}
         component={RelayoutScreen}
         options={{ title: 'Relayout' }}
+      />
+      <Stack.Screen
+        name={ROUTES.KeyboardWithinModal}
+        component={KeyboardWithinModalScreen}
+        options={{ title: 'Keyboard within Modal' }}
+      />
+      <Stack.Screen
+        name={ROUTES.KeyboardWrappingModal}
+        component={KeyboardWrappingModalScreen}
+        options={{ title: 'Keyboard within Modal' }}
+      />
+      <Stack.Screen
+        name={ROUTES.KeyboardWithinModalLib}
+        component={KeyboardWrappingModalLibScreen}
+        options={{ title: 'Keyboard within rn-modal' }}
       />
     </Stack.Navigator>
   );

@@ -42,6 +42,27 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
           }}
           style={styles.button}
         />
+        <Button
+          label="Keyboard within modal"
+          onPress={() => {
+            navigation.push(ROUTES.KeyboardWithinModal);
+          }}
+          style={styles.button}
+        />
+        <Button
+          label="Keyboard wrapping modal"
+          onPress={() => {
+            navigation.push(ROUTES.KeyboardWrappingModal);
+          }}
+          style={styles.button}
+        />
+        <Button
+          label="Keyboard within rn-modal"
+          onPress={() => {
+            navigation.push(ROUTES.KeyboardWithinModalLib);
+          }}
+          style={styles.button}
+        />
       </ScrollView>
     </SafeAreaView>
   );
