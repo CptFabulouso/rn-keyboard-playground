@@ -7,4 +7,6 @@ export enum ROUTES {
   KeyboardWithinModal = 'KeyboardWithinModal',
   KeyboardWrappingModal = 'KeyboardWrappingModal',
   KeyboardWithinModalLib = 'KeyboardWithinModalLib',
+  MultilineInput = 'MultilineInput',
+  ContentInset = 'ContentInset',
 }

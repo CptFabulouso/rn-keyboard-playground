@@ -7,6 +7,8 @@ import styles from './styles';
 
 type HomeScreenProps = RootStackScreenProps<ROUTES.Home> & {};
 
+const screens = Object.values(ROUTES);
+
 const HomeScreen = ({ navigation }: HomeScreenProps) => {
   return (
     <SafeAreaView>
@@ -14,55 +16,21 @@ const HomeScreen = ({ navigation }: HomeScreenProps) => {
         contentInsetAdjustmentBehavior="automatic"
         style={styles.scrollView}
       >
-        <Button
-          label="Login layout"
-          onPress={() => {
-            navigation.push(ROUTES.LoginLayout);
-          }}
-          style={styles.button}
-        />
-        <Button
-          label="Form layout"
-          onPress={() => {
-            navigation.push(ROUTES.FormLayout);
-          }}
-          style={styles.button}
-        />
-        <Button
-          label="Input after scroll"
-          onPress={() => {
-            navigation.push(ROUTES.InputAfterScroll);
-          }}
-          style={styles.button}
-        />
-        <Button
-          label="Relayout"
-          onPress={() => {
-            navigation.push(ROUTES.Relayout);
-          }}
-          style={styles.button}
-        />
-        <Button
-          label="Keyboard within modal"
-          onPress={() => {
-            navigation.push(ROUTES.KeyboardWithinModal);
-          }}
-          style={styles.button}
-        />
-        <Button
-          label="Keyboard wrapping modal"
-          onPress={() => {
-            navigation.push(ROUTES.KeyboardWrappingModal);
-          }}
-          style={styles.button}
-        />
-        <Button
-          label="Keyboard within rn-modal"
-          onPress={() => {
-            navigation.push(ROUTES.KeyboardWithinModalLib);
-          }}
-          style={styles.button}
-        />
+        {screens.map((screenName) => {
+          if (screenName === ROUTES.Home) {
+            return;
+          }
+          return (
+            <Button
+              key={screenName}
+              label={screenName}
+              onPress={() => {
+                navigation.push(screenName);
+              }}
+              style={styles.button}
+            />
+          );
+        })}
       </ScrollView>
     </SafeAreaView>
   );

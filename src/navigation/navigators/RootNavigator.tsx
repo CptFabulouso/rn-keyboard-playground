@@ -12,6 +12,8 @@ import RelayoutScreen from '@screens/Relayout/RelayoutScreen';
 import KeyboardWithinModalScreen from '@screens/Modal/KeyboardWithinModalScreen';
 import KeyboardWrappingModalScreen from '@screens/Modal/KeyboardWrappingModalScreen';
 import KeyboardWrappingModalLibScreen from '@screens/Modal/RNModal';
+import MultilineInputScreen from '@screens/MultilineInput/MultilineInputScreen';
+import ContentInsetScreen from '@screens/ContentInset/ContentInsetScreen';
 
 import { ROUTES } from '../Routes';
 
@@ -24,6 +26,8 @@ export type RootStackParamList = {
   [ROUTES.KeyboardWithinModal]: undefined;
   [ROUTES.KeyboardWrappingModal]: undefined;
   [ROUTES.KeyboardWithinModalLib]: undefined;
+  [ROUTES.MultilineInput]: undefined;
+  [ROUTES.ContentInset]: undefined;
 };
 
 export type RootStackScreenProps<
@@ -68,12 +72,22 @@ const RootNavigator = () => {
       <Stack.Screen
         name={ROUTES.KeyboardWrappingModal}
         component={KeyboardWrappingModalScreen}
-        options={{ title: 'Keyboard within Modal' }}
+        options={{ title: 'Keyboard wrapping Modal' }}
       />
       <Stack.Screen
         name={ROUTES.KeyboardWithinModalLib}
         component={KeyboardWrappingModalLibScreen}
         options={{ title: 'Keyboard within rn-modal' }}
+      />
+      <Stack.Screen
+        name={ROUTES.MultilineInput}
+        component={MultilineInputScreen}
+        options={{ title: 'Multiline Input' }}
+      />
+      <Stack.Screen
+        name={ROUTES.ContentInset}
+        component={ContentInsetScreen}
+        options={{ title: 'Content Inset' }}
       />
     </Stack.Navigator>
   );
